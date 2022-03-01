@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## Welcome to Digital Commons Lab
 
-You can use the [editor on GitHub](https://github.com/DigitalCommonsLab/web/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The Digital Commons Lab (DCL) is  a research laboratory of the Digital Society Center of Fondazione Bruno Kessler with the goal to design, develop and analyze digital commons based on open data.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The main sectors where DCL works are on the share and collaboration on the data.<br/>
+In particular the main goal is on the valorization of the open data, the creation of data spaces, and the analysis and crowdsourcing projects to share open data like OpenStreetMap.<br/>
+The digital commons lab wants to be a place to analyze the results of what is continuously produced by the communities with the aim of fostering their growth through the popularization of these themes and the analysis of the dynamics in the communities aiming to reduce the distances in the dialog with the public administration, the businesses and citizens.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Outputs of the lab are best practices, data visualizations and  events designed for public institutions, companies and the communities themselves acting as a strong force for innovation not only on the technological side but, first and foremost, with a big social impact.
+Main investigative topics are in digital transformation, smart cities, mobility and green deal.
 
-```markdown
-Syntax highlighted code block
+### Contact
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DigitalCommonsLab/web/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Maurizio Napolitano <napolitano@fbk.eu>
