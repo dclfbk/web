@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FBK nel panorama internazionale della ricerca</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+:root{--fbk-blue:#0055a5;--fbk-blue-dark:#003f7d;--fbk-blue-light:#4b8dca;--black:#111;--ink:#202020;--muted:#666;--paper:#fff;--soft:#f3f5f7;--line:#d7dce1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:'Roboto',Arial,sans-serif;line-height:1.55}a{color:inherit}.utility{background:#111;color:#fff;font:500 12px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em}.utility-inner,.site-header-inner{max-width:1180px;margin:auto;padding:0 24px;display:flex;justify-content:flex-end;align-items:center}.utility a{padding:10px 11px;text-decoration:none;color:#fff}.utility a:hover{background:#000}.site-header{background:#fff;border-bottom:1px solid #ddd}.site-header-inner{min-height:102px;justify-content:space-between;gap:35px}.brand{text-decoration:none;display:flex;align-items:center}.main-nav{display:flex;align-items:center;gap:30px;font:600 15px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase}.main-nav a{text-decoration:none;padding:42px 0 37px;border-bottom:5px solid transparent}.main-nav a:hover,.main-nav a.active{border-bottom-color:var(--fbk-blue);color:var(--fbk-blue)}
+.hero{background:var(--fbk-blue);color:#fff}.hero-inner{max-width:1180px;margin:auto;padding:58px 24px 54px;display:grid;grid-template-columns:1.6fr .55fr;gap:70px;align-items:end}.eyebrow{font:600 13px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin-bottom:15px;color:#fff}h1,h2,h3{font-family:'Roboto Condensed',Arial,sans-serif}h1{font-size:57px;line-height:1.02;font-weight:600;letter-spacing:-.02em;margin:0 0 20px;max-width:850px}.lead{font-size:20px;font-weight:300;max-width:820px;margin:0}.period-box{border-top:1px solid rgba(255,255,255,.7);padding-top:16px}.period-box label{display:block;font:600 12px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.11em;margin-bottom:10px}.switch{display:flex;border:1px solid rgba(255,255,255,.9)}.switch button{flex:1;border:0;padding:12px 10px;background:transparent;color:#fff;font:600 14px 'Roboto Condensed',Arial,sans-serif;cursor:pointer}.switch button.active{background:#fff;color:#222}
+main{max-width:1180px;margin:auto;padding:0 24px 75px}.section{padding:68px 0;border-bottom:1px solid #ccc}.section-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:55px;margin-bottom:38px}.section-number{font:700 12px 'Roboto Condensed',Arial,sans-serif;color:var(--fbk-blue);text-transform:uppercase;letter-spacing:.12em}.section h2,.method h2{font-size:40px;line-height:1.05;font-weight:600;letter-spacing:-.015em;margin:8px 0 0}.section-intro{font-size:18px;font-weight:300;color:#555;margin:5px 0 0;max-width:690px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:4px solid #1d1d1d}.kpi{padding:28px 23px 31px;border-right:1px solid #ccc;background:#fff}.kpi:last-child{border-right:0}.kpi-value{font:700 50px/1 'Roboto Condensed',Arial,sans-serif;color:var(--fbk-blue)}.kpi-text{font-size:14px;color:#555;margin-top:13px}.chart-wrap{height:510px;width:100%}.chart-wrap.sankey{height:590px}.chart-note{font-size:13px;color:#666;border-top:1px solid #bbb;padding-top:14px;margin-top:14px}.tabs{display:flex;border-bottom:1px solid #aaa;margin-bottom:22px}.tabs button{border:0;border-bottom:4px solid transparent;background:transparent;padding:12px 20px;font:600 14px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;cursor:pointer}.tabs button.active{color:var(--fbk-blue);border-bottom-color:var(--fbk-blue)}.insights{display:grid;grid-template-columns:1fr 1fr;gap:25px}.insight{padding:30px;background:#f1f1f1;border-top:8px solid #252525}.insight.accent{border-top-color:var(--fbk-blue)}.insight-label{font:700 12px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#666}.insight h3{font-size:29px;line-height:1.12;font-weight:600;margin:10px 0 15px}.insight p{margin:0;color:#505050}.metric-line{display:flex;align-items:baseline;gap:12px;margin:17px 0 12px}.metric-big{font:700 46px 'Roboto Condensed',Arial,sans-serif;color:var(--fbk-blue)}.metric-caption{font-size:14px;color:#666}.method{background:#eee;border-top:1px solid #d3d3d3;padding:58px 0}.method-inner{max-width:1180px;margin:auto;padding:0 24px;display:grid;grid-template-columns:.75fr 1.25fr;gap:55px}.method p{color:#4f4f4f;margin:0 0 14px}.method a{color:var(--fbk-blue)}
+.footer{background:#222;color:#ddd}.footer-top{border-top:8px solid var(--fbk-blue)}.footer-inner{max-width:1180px;margin:auto;padding:48px 24px 24px}.footer-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:60px;padding-bottom:36px;border-bottom:1px solid #555}.footer h3{font:700 14px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin:0 0 16px}.footer p,.footer a{font-size:13px;color:#d0d0d0}.footer-links{display:flex;flex-direction:column;gap:9px}.footer-links a{text-decoration:none}.footer-links a:hover{color:#fff;text-decoration:underline}.footer-logo{font:700 30px 'Roboto Condensed',Arial,sans-serif;color:#fff;margin-bottom:14px}.cert{font-size:12px;line-height:1.5;color:#aaa;max-width:390px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:12px;color:#aaa}
+@media(max-width:920px){.main-nav{display:none}.hero-inner,.section-head,.method-inner{grid-template-columns:1fr}.hero-inner{gap:32px}.kpis{grid-template-columns:1fr 1fr}.kpi:nth-child(2){border-right:0}.insights{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:620px){.utility{display:none}.site-header-inner{min-height:78px}.hero-inner{padding-top:42px}.hero h1{font-size:42px}.kpis{grid-template-columns:1fr}.kpi{border-right:0;border-bottom:1px solid #ccc}.section{padding:52px 0}.section h2,.method h2{font-size:34px}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="utility"><div class="utility-inner"><a href="https://www.fbk.eu/en/calls/" target="_blank">Calls</a><a href="https://www.fbk.eu/en/work-with-us/" target="_blank">Work with us</a><a href="https://www.fbk.eu/en/media/" target="_blank">Media</a><a href="https://howto.fbk.eu/" target="_blank">How To</a><a href="https://www.fbk.eu/en/phonebook/" target="_blank">Phonebook</a><a href="https://www.fbk.eu/">IT</a></div></div>
+<header class="site-header"><div class="site-header-inner"><a class="brand" href="https://www.fbk.eu/en/" target="_blank"><img src="https://www.fbk.eu/wp-content/themes/fbk-foundation/images/fbk-foundation.png" alt="Fondazione Bruno Kessler" style="width:270px;max-width:42vw;height:auto;display:block"></a><nav class="main-nav"><a href="https://www.fbk.eu/en/about-fbk/" target="_blank">About FBK</a><a class="active" href="https://www.fbk.eu/en/research/" target="_blank">Research</a><a href="https://www.fbk.eu/en/innovation/" target="_blank">Innovation</a><a href="https://www.fbk.eu/en/results/" target="_blank">Results</a><a href="https://www.fbk.eu/en/events/" target="_blank">Events</a><a href="https://magazine.fbk.eu/" target="_blank">Magazine</a><a href="https://www.fbk.eu/en/contacts/" target="_blank">Contacts</a></nav></div></header>
+<section class="hero">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">Research impact overview</div>
+   <h1>FBK nel panorama internazionale della ricerca</h1>
+   <p class="lead">Una lettura visuale della presenza scientifica della Fondazione: dove si concentra, dove raggiunge le posizioni più alte e come si articola fra ambiti di ricerca.</p>
+  </div>
+  <div class="period-box">
+   <label>Prospettiva</label>
+   <div class="switch"><button id="careerBtn" class="active">Carriera</button><button id="yearBtn">Impatto 2024</button></div>
+  </div>
+ </div>
+</section>
+<main>
+ <section class="section">
+  <div class="section-head"><div><div class="section-number">01 — In sintesi</div><h2>Un profilo concentrato, con punte molto visibili</h2></div><p class="section-intro">I numeri non descrivono tutta la ricerca FBK: mostrano dove l’organizzazione emerge nel database internazionale degli indicatori citazionali standardizzati.</p></div>
+  <div class="kpis">
+   <div class="kpi"><div class="kpi-value" id="k1">4</div><div class="kpi-text" id="k1t"></div></div>
+   <div class="kpi"><div class="kpi-value" id="k2">5</div><div class="kpi-text" id="k2t"></div></div>
+   <div class="kpi"><div class="kpi-value" id="k3">67%</div><div class="kpi-text" id="k3t"></div></div>
+   <div class="kpi"><div class="kpi-value" id="k4">91°</div><div class="kpi-text" id="k4t"></div></div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="section-head"><div><div class="section-number">02 — Concentrazione</div><h2>Dove si concentra il contributo scientifico</h2></div><p class="section-intro">Ogni barra rappresenta una macro-area; i segmenti mostrano i sottosettori che la compongono. Il grafico privilegia la lettura organizzativa, non il confronto fra singoli ricercatori.</p></div>
+  <div id="stackedChart" class="chart-wrap"></div>
+  <div class="chart-note">La misura utilizzata è il numero di profili affiliati a FBK presenti nel dataset. Le due prospettive temporali sono alternative e non devono essere sommate.</div>
+ </section>
+
+ <section class="section">
+  <div class="section-head"><div><div class="section-number">03 — Articolazione</div><h2>Dalla Fondazione ai campi di ricerca</h2></div><p class="section-intro">Il diagramma mostra come la presenza FBK si distribuisce dalle macro-aree ai sottosettori. Una seconda vista propone una possibile lettura per centri FBK.</p></div>
+  <div class="tabs"><button id="scienceTab" class="active">Classificazione scientifica</button><button id="centresTab">Lettura per centri FBK</button></div>
+  <div id="sankeyChart" class="chart-wrap sankey"></div>
+  <div id="sankeyNote" class="chart-note">Macro-aree e sottosettori seguono la classificazione Science-Metrix utilizzata dal dataset Elsevier.</div>
+ </section>
+
+ <section class="section">
+  <div class="section-head"><div><div class="section-number">04 — Posizionamento</div><h2>Due modi diversi di emergere</h2></div><p class="section-intro">La forza organizzativa può dipendere dalla massa critica in un campo oppure dalla posizione relativa raggiunta rispetto alla popolazione scientifica mondiale.</p></div>
+  <div class="insights">
+   <article class="insight"><div class="insight-label">Massa critica</div><h3 id="massTitle">Artificial Intelligence & Image Processing</h3><div class="metric-line"><span class="metric-big" id="massValue">10</span><span class="metric-caption">presenze FBK</span></div><p id="massText"></p></article>
+   <article class="insight accent"><div class="insight-label">Leadership relativa</div><h3 id="leadTitle">Geological & Geomatics Engineering</h3><div class="metric-line"><span class="metric-big" id="leadValue">91°</span><span class="metric-caption" id="leadCaption">su 75.876 profili mondiali</span></div><p id="leadText"></p></article>
+  </div>
+ </section>
+</main>
+
+<section class="method">
+ <div class="method-inner">
+  <div><div class="section-number">Nota metodologica</div><h2>Cosa misura questa pagina</h2></div>
+  <div>
+   <p>La fonte è il dataset Elsevier/Stanford sugli indicatori citazionali standardizzati, basato su dati Scopus aggiornati alla fine del 2024. Il dataset include gli autori selezionati per c-score o appartenenti al top 2% del proprio sottosettore.</p>
+   <p>L’overview misura quindi <strong>presenza e visibilità citazionale</strong>, non tutta la produzione, la qualità, l’impatto sociale o la capacità progettuale di FBK.</p>
+   <p>L’associazione ai centri FBK è una <strong>lettura interpretativa</strong> basata sui campi scientifici: l’affiliazione al singolo centro non è fornita dal dataset e andrebbe validata con dati organizzativi interni.</p>
+   <p>Fonte: <a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/8" target="_blank" rel="noopener">Elsevier Data Repository, DOI 10.17632/btchxktzyw.8</a>.</p>
+  </div>
+ </div>
+</section>
+<footer class="footer footer-top"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-logo">FBK | Fondazione Bruno Kessler</div><p>Via Santa Croce 77<br>38122 Trento, Italy</p><p class="cert">FBK is certified according to UNI EN ISO 9001:2015, ISO/IEC 27001:2022 and UNI/PdR 125:2022 standards.</p></div><div><h3>Navigate directly</h3><div class="footer-links"><a href="https://www.fbk.eu/en/about-fbk/" target="_blank">About FBK</a><a href="https://www.fbk.eu/en/research/" target="_blank">Research centers</a><a href="https://www.fbk.eu/en/innovation/" target="_blank">Innovation</a><a href="https://cris.fbk.eu/" target="_blank">Publications</a><a href="https://www.fbk.eu/en/events/" target="_blank">Events</a><a href="https://www.fbk.eu/en/contacts/" target="_blank">Contacts</a></div></div><div><h3>Policies and information</h3><div class="footer-links"><a href="https://www.fbk.eu/en/privacy-cookies-policy/" target="_blank">Privacy and cookie policy</a><a href="https://www.fbk.eu/en/credits/" target="_blank">Credits and content management</a><a href="https://www.fbk.eu/en/social-media-policy/" target="_blank">Social Media Policy</a><a href="https://trasparenza.fbk.eu/" target="_blank">Transparent administration</a><a href="https://howto.fbk.eu/whistleblowing/" target="_blank">Whistleblowing</a></div></div></div><div class="footer-bottom"><span>FBK | Fondazione Bruno Kessler — All rights reserved © 2017</span><span>Exploratory research overview — Scopus data through 2024</span></div></div></footer>
+<script>
+const COLORS=['#0055a5','#2b6fb3','#4b8dca','#7aa9d3','#111111','#6b6b6b'];
+const datasets={
+ career:{
+  "Engineering":{"Geological & Geomatics Engineering":{"fbk":2,"world":75876,"best":91,"second":347}},
+  "Information & Communication Technologies":{"Artificial Intelligence & Image Processing":{"fbk":10,"world":458615,"best":2204,"second":3344}},
+  "Physics & Astronomy":{"Applied Physics":{"fbk":1,"world":314640,"best":4295},"Optics":{"fbk":1,"world":80301,"best":1589}},
+  "Enabling & Strategic Technologies":{"Nanoscience & Nanotechnology":{"fbk":1,"world":156020,"best":4033}}
+ },
+ year:{
+  "Engineering":{"Geological & Geomatics Engineering":{"fbk":2,"world":75876,"best":89,"second":326}},
+  "Physics & Astronomy":{"Applied Physics":{"fbk":1,"world":314640,"best":871}},
+  "Information & Communication Technologies":{"Artificial Intelligence & Image Processing":{"fbk":3,"world":458615,"best":3975,"second":5334}},
+  "Biomedical Research":{"Microbiology":{"fbk":1,"world":217955,"best":1896}},
+  "Enabling & Strategic Technologies":{"Nanoscience & Nanotechnology":{"fbk":1,"world":156020,"best":6714}}
+ }
+};
+const labels={
+ career:{k1:'4',k1t:'macro-aree in cui FBK è riconoscibile nella vista di carriera',k2:'5',k2t:'sottosettori che compongono il profilo scientifico',k3:'67%',k3t:'della presenza è concentrata nelle tecnologie dell’informazione',k4:'91°',k4t:'miglior posizionamento FBK su 75.876 profili mondiali in geomatica'},
+ year:{k1:'5',k1t:'macro-aree visibili attraverso le citazioni ricevute nel 2024',k2:'5',k2t:'sottosettori che compongono il profilo annuale',k3:'38%',k3t:'della presenza 2024 è concentrata nell’intelligenza artificiale',k4:'89°',k4t:'miglior posizionamento FBK su 75.876 profili mondiali in geomatica'}
+};
+const centreMap={
+ 'Geological & Geomatics Engineering':'Augmented Intelligence',
+ 'Artificial Intelligence & Image Processing':'Augmented Intelligence / Digital Industry / Digital Health & Wellbeing / Digital Society',
+ 'Applied Physics':'Sensors & Devices',
+ 'Optics':'Sensors & Devices',
+ 'Nanoscience & Nanotechnology':'Sensors & Devices',
+ 'Microbiology':'Health Emergencies'
+};
+let mode='career', sankeyMode='science';
+const stack=echarts.init(document.getElementById('stackedChart'));
+const sankey=echarts.init(document.getElementById('sankeyChart'));
+function fmt(n){return new Intl.NumberFormat('it-IT').format(n)}
+function flatten(data){const out=[];Object.entries(data).forEach(([macro,subs])=>Object.entries(subs).forEach(([sub,v])=>out.push({macro,sub,...v})));return out}
+function renderKpis(){const l=labels[mode];['k1','k2','k3','k4'].forEach(k=>{document.getElementById(k).textContent=l[k];document.getElementById(k+'t').textContent=l[k+'t']})}
+function renderStack(){
+ const data=datasets[mode], macros=Object.keys(data), subs=[...new Set(flatten(data).map(d=>d.sub))];
+ const series=subs.map((sub,i)=>({name:sub,type:'bar',stack:'total',barWidth:34,itemStyle:{color:COLORS[i%COLORS.length]},emphasis:{focus:'series'},label:{show:true,position:'inside',formatter:p=>p.value?String(p.value):''},data:macros.map(m=>data[m][sub]?.fbk||0)}));
+ stack.setOption({textStyle:{fontFamily:'Roboto, Arial, sans-serif'},animationDuration:700,tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:params=>{const valid=params.filter(p=>p.value);return '<strong>'+params[0].axisValue+'</strong><br>'+valid.map(p=>p.marker+p.seriesName+': <b>'+p.value+'</b>').join('<br>')}},legend:{type:'scroll',bottom:0,left:0,textStyle:{fontSize:12}},grid:{left:10,right:25,top:20,bottom:115,containLabel:true},xAxis:{type:'value',name:'Profili FBK presenti nel dataset',minInterval:1,splitLine:{lineStyle:{color:'#e5e1dc'}},axisLine:{show:false}},yAxis:{type:'category',data:macros,axisLabel:{width:190,overflow:'break',fontSize:13,lineHeight:17},axisTick:{show:false},axisLine:{show:false}},series});
+}
+function scienceSankey(rows){
+ const nodes=[{name:'FBK'}],links=[];
+ const macros=[...new Set(rows.map(r=>r.macro))];
+ macros.forEach(m=>{nodes.push({name:m});const value=rows.filter(r=>r.macro===m).reduce((a,b)=>a+b.fbk,0);links.push({source:'FBK',target:m,value})});
+ rows.forEach(r=>{nodes.push({name:r.sub});links.push({source:r.macro,target:r.sub,value:r.fbk})});
+ return {nodes,links};
+}
+function centresSankey(rows){
+ const nodes=[{name:'FBK'}],links=[]; const centreValues={};
+ rows.forEach(r=>{const c=centreMap[r.sub];centreValues[c]=(centreValues[c]||0)+r.fbk});
+ Object.entries(centreValues).forEach(([c,v])=>{nodes.push({name:c});links.push({source:'FBK',target:c,value:v})});
+ rows.forEach(r=>{const c=centreMap[r.sub];nodes.push({name:r.sub});links.push({source:c,target:r.sub,value:r.fbk})});
+ return {nodes,links};
+}
+function renderSankey(){
+ const rows=flatten(datasets[mode]);const graph=sankeyMode==='science'?scienceSankey(rows):centresSankey(rows);
+ sankey.setOption({textStyle:{fontFamily:'Roboto, Arial, sans-serif'},animationDuration:700,tooltip:{trigger:'item',formatter:p=>p.dataType==='edge'?p.data.source+' → '+p.data.target+'<br><b>'+p.data.value+' presenze</b>':p.name},series:[{type:'sankey',data:graph.nodes,links:graph.links,left:8,right:190,top:15,bottom:20,nodeWidth:18,nodeGap:18,draggable:false,layoutIterations:40,emphasis:{focus:'adjacency'},lineStyle:{color:'gradient',curveness:.52,opacity:.42},itemStyle:{borderWidth:0},label:{fontSize:12,color:'#222',width:175,overflow:'break',lineHeight:16},levels:[{depth:0,itemStyle:{color:'#111'}},{depth:1,itemStyle:{color:'#0055a5'}},{depth:2,itemStyle:{color:'#4b8dca'}}]}]});
+ document.getElementById('sankeyNote').textContent=sankeyMode==='science'?'Macro-aree e sottosettori seguono la classificazione Science-Metrix utilizzata dal dataset Elsevier.':'Questa vista è indicativa: il dataset non specifica il centro FBK di appartenenza. Le associazioni vanno verificate con dati organizzativi interni; le aree AI possono attraversare più centri.';
+}
+function renderInsights(){
+ const rows=flatten(datasets[mode]);const mass=[...rows].sort((a,b)=>b.fbk-a.fbk)[0];const lead=[...rows].sort((a,b)=>(a.best/a.world)-(b.best/b.world))[0];const pct=(lead.best/lead.world*100);
+ document.getElementById('massTitle').textContent=mass.sub;document.getElementById('massValue').textContent=mass.fbk;
+ document.getElementById('massText').textContent=`È il campo in cui FBK presenta la maggiore concentrazione organizzativa: ${mass.fbk} profili su ${fmt(mass.world)} presenti nel dataset mondiale del sottosettore. Il dato segnala ampiezza del presidio, non una quota dell’intera comunità scientifica.`;
+ document.getElementById('leadTitle').textContent=lead.sub;document.getElementById('leadValue').textContent=lead.best+'°';document.getElementById('leadCaption').textContent='su '+fmt(lead.world)+' profili mondiali';
+ document.getElementById('leadText').textContent=`È il posizionamento relativo più forte di FBK: la presenza meglio collocata ricade nel top ${pct.toLocaleString('it-IT',{maximumFractionDigits:2})}% del campo. FBK conta ${lead.fbk} presenze nel sottosettore${lead.second?`, entrambe entro la posizione ${fmt(lead.second)}`:''}.`;
+}
+function renderAll(){renderKpis();renderStack();renderSankey();renderInsights()}
+document.getElementById('careerBtn').onclick=()=>{mode='career';careerBtn.classList.add('active');yearBtn.classList.remove('active');renderAll()};
+document.getElementById('yearBtn').onclick=()=>{mode='year';yearBtn.classList.add('active');careerBtn.classList.remove('active');renderAll()};
+document.getElementById('scienceTab').onclick=()=>{sankeyMode='science';scienceTab.classList.add('active');centresTab.classList.remove('active');renderSankey()};
+document.getElementById('centresTab').onclick=()=>{sankeyMode='centres';centresTab.classList.add('active');scienceTab.classList.remove('active');renderSankey()};
+window.addEventListener('resize',()=>{stack.resize();sankey.resize()});
+renderAll();
+</script>
+</body>
+</html>
