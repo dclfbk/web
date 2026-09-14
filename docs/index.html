@@ -45,11 +45,12 @@
         </div>
       </div>
       <div class="hero-visual reveal visible">
-        <a class="hero-map hero-map-main" href="https://stressinbici.it/" target="_blank" rel="noopener"><img src="/assets/img/stressinbici-cover.png" alt="Stress in bici map showing cycling stress levels on the streets of Trento"><span class="hero-map-caption">Stress in bici · Open mobility data ↗</span></a>
-        <a class="hero-map hero-map-small" href="https://talea.comune.bologna.it/what" target="_blank" rel="noopener"><img src="/assets/img/talea-cover.jpg" alt="Aerial view of Bologna from the TALEA project"><span class="hero-map-caption">TALEA · Climate intelligence ↗</span></a>
-        <a class="hero-map hero-map-small" href="#work"><img src="/assets/img/time-travel.webp" alt="Historical migration map of Trentino"><span class="hero-map-caption">Trento Time Travel Maps ↘</span></a>
-        <a class="hero-map hero-map-small" href="https://github.com/dclfbk/canvasaiethics" target="_blank" rel="noopener"><img class="canvas-image" src="/assets/img/ai-ethics-canvas.webp" alt="Overview of the AI Ethics Canvas"><span class="hero-map-caption">AI Ethics Canvas · Responsible AI ↗</span></a>
-        <a class="hero-map hero-map-small" href="https://github.com/dclfbk/povocivichub" target="_blank" rel="noopener"><img src="/assets/img/povo-civic-hub.png" alt="Povo Civic Hub interactive territorial atlas"><span class="hero-map-caption">Povo Civic Hub · Social infrastructure ↗</span></a>
+        <a class="hero-map" href="https://stressinbici.it/" target="_blank" rel="noopener"><img src="/assets/img/stressinbici-cover.png" alt="Stress in bici map showing cycling stress levels on the streets of Trento"><span class="hero-map-caption">Stress in bici · Open mobility data ↗</span></a>
+        <a class="hero-map" href="https://talea.comune.bologna.it/historysuhi/#2.v1.g1.yd.l0&amp;lng=11.30297&amp;lat=44.50289&amp;zoom=10.87" target="_blank" rel="noopener"><img src="/assets/img/talea-historysuhi.webp" alt="TALEA surface temperature history map of Bologna"><span class="hero-map-caption">TALEA · Surface heat history ↗</span></a>
+        <a class="hero-map" href="https://talea.comune.bologna.it/sci/" target="_blank" rel="noopener"><img src="/assets/img/talea-sci.webp" alt="TALEA Shadow Coverage Index map of Bologna"><span class="hero-map-caption">TALEA · Shadow Coverage Index ↗</span></a>
+        <a class="hero-map" href="https://github.com/dclfbk/canvasaiethics" target="_blank" rel="noopener"><img class="canvas-image" src="/assets/img/ai-ethics-canvas.webp" alt="Overview of the AI Ethics Canvas"><span class="hero-map-caption">AI Ethics Canvas · Responsible AI ↗</span></a>
+        <a class="hero-map" href="https://dclfbk.github.io/povocivichub" target="_blank" rel="noopener"><img src="/assets/img/povo-civic-hub.webp" alt="Povo Civic Hub interactive map of Povo, Trento"><span class="hero-map-caption">Povo Civic Hub · Social infrastructure ↗</span></a>
+        <a class="hero-map" href="https://covid19trentino.fbk.eu/" target="_blank" rel="noopener"><img src="/assets/img/covid19-trentino.webp" alt="COVID-19 Trentino open data dashboard"><span class="hero-map-caption">COVID-19 Trentino · Open data ↗</span></a>
       </div>
     </section>
 
@@ -132,19 +133,27 @@ how AI works, where it fails and how to use it responsibly.</p><a class="project
     <section class="publications" id="publications">
       <div class="section-heading reveal">
         <div><p class="section-index">04 / Publications</p><h2>Ideas, methods<br>and evidence.</h2></div>
-        <p>A selection of recent publications involving members of the
+        <div class="publications-tools">
+          <p>A selection of recent publications involving members of the
 group, spanning digital commons, responsible AI, urban data and open
-mapping.</p>
+mapping. Newest first.</p>
+          <label class="publication-search">
+            <span class="visually-hidden">Search publications</span>
+            <input type="search" id="publication-search" placeholder="Search publications…" aria-label="Search publications">
+          </label>
+        </div>
       </div>
-      <div class="publication-list">
-        <a class="publication reveal" href="https://doi.org/10.1017/dap.2026.10088" target="_blank" rel="noopener"><span>2026 · Data &amp; Policy</span><h3>AI Ethics Canvas: A graphical tool to design and deploy ethical artificial intelligence for public administrations</h3><b>Read publication ↗</b></a>
-        <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/372007" target="_blank" rel="noopener"><span>2026 · Digital commons</span><h3>A global data commons is needed to protect and govern Earth's soil</h3><b>View record ↗</b></a>
-        <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/371507" target="_blank" rel="noopener"><span>2026 · Active mobility</span><h3>LTS-BikePlan: A Data-Driven Tool for Enhancing Cycling Infrastructure and Safety</h3><b>View record ↗</b></a>
-        <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/372027" target="_blank" rel="noopener"><span>2026 · Open data</span><h3>Data as Commons: The Power and Impact of Open Data</h3><b>View record ↗</b></a>
-        <a class="publication reveal" href="https://doi.org/10.3390/ijgi14010017" target="_blank" rel="noopener"><span>2025 · Urban climate</span><h3>Investigating Social Vulnerability to Extreme Heat: Heat Islands and Climate Shelters in Urban Contexts</h3><b>Read publication ↗</b></a>
-        <a class="publication reveal" href="https://doi.org/10.1016/j.urbmob.2023.100057" target="_blank" rel="noopener"><span>2023 · Urban mobility</span><h3>Are Italian cities already 15-minute? Presenting the Next Proximity Index</h3><b>Read publication ↗</b></a>
+      <div class="publication-scroll">
+        <div class="publication-list" id="publication-list">
+          <a class="publication reveal" href="https://doi.org/10.1017/dap.2026.10088" target="_blank" rel="noopener" data-date="2026-07-14"><span>Jul 2026 · Data &amp; Policy</span><h3>AI Ethics Canvas: A graphical tool to design and deploy ethical artificial intelligence for public administrations</h3><b>Read publication ↗</b></a>
+          <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/372027" target="_blank" rel="noopener" data-date="2026-05-02"><span>May 2026 · Open data</span><h3>Data as Commons: The Power and Impact of Open Data</h3><b>View record ↗</b></a>
+          <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/372007" target="_blank" rel="noopener" data-date="2026-03-11"><span>Mar 2026 · Digital commons</span><h3>A global data commons is needed to protect and govern Earth's soil</h3><b>View record ↗</b></a>
+          <a class="publication reveal" href="https://cris.fbk.eu/handle/11582/371507" target="_blank" rel="noopener" data-date="2026-01-20"><span>Jan 2026 · Active mobility</span><h3>LTS-BikePlan: A Data-Driven Tool for Enhancing Cycling Infrastructure and Safety</h3><b>View record ↗</b></a>
+          <a class="publication reveal" href="https://doi.org/10.3390/ijgi14010017" target="_blank" rel="noopener" data-date="2025-11-06"><span>Nov 2025 · Urban climate</span><h3>Investigating Social Vulnerability to Extreme Heat: Heat Islands and Climate Shelters in Urban Contexts</h3><b>Read publication ↗</b></a>
+          <a class="publication reveal" href="https://doi.org/10.1016/j.urbmob.2023.100057" target="_blank" rel="noopener" data-date="2023-06-01"><span>Jun 2023 · Urban mobility</span><h3>Are Italian cities already 15-minute? Presenting the Next Proximity Index</h3><b>Read publication ↗</b></a>
+        </div>
+        <button type="button" class="publication-scroll-down" id="publication-scroll-down" aria-label="Scroll down for more publications">↓</button>
       </div>
-      <a class="orcid-link" href="https://orcid.org/0000-0002-7064-8334" target="_blank" rel="noopener">See the complete publication record on ORCID <span>↗</span></a>
     </section>
 
     <section class="team" id="team">
