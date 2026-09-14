@@ -123,3 +123,7 @@ footer{flex-wrap:wrap;gap:10px 24px}
 .cookie-notice button:hover{opacity:.9}
 .cookie-notice[hidden]{display:none}
 @media(max-width:560px){.cookie-notice{padding:16px 20px}}
+
+/* Mobile stacking fix: a later unconditional .hero rule (line 27) was
+   overriding the responsive single-column stack below 900px */
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:45px}}
