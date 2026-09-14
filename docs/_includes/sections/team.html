@@ -1,11 +1,15 @@
 {% assign team_text = site.sections | where: "lang", page.lang | where: "slug", "team" | first %}
-{% assign members = site.data[page.lang].team %}
+{% assign members = site.data.team %}
 <section class="team" id="team">
   <p class="section-index">{{ team_text.index_label }}</p>
   <div class="team-heading reveal"><h2>{{ team_text.title }}</h2>{{ team_text.content }}</div>
   <div class="team-grid">
     {% for member in members %}
-    <article>{% if member.image %}<img class="person-photo" src="{{ member.image | relative_url }}" alt="{{ member.name }}" loading="lazy">{% else %}<div class="initials{% if member.color %} {{ member.color }}{% endif %}">{{ member.initials }}</div>{% endif %}<h3>{{ member.name }}</h3><p class="role">{{ member.role }}</p>{% if member.bio %}<p class="bio">{{ member.bio }}</p>{% endif %}{% if member.linkedin or member.github or member.orcid %}<div class="person-links">{% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank" rel="noopener">{% include icons/linkedin.svg %}LinkedIn</a>{% endif %}{% if member.github %}<a href="{{ member.github }}" target="_blank" rel="noopener">{% include icons/github.svg %}GitHub</a>{% endif %}{% if member.orcid %}<a href="{{ member.orcid }}" target="_blank" rel="noopener">{% include icons/orcid.svg %}ORCID</a>{% endif %}</div>{% endif %}</article>
+    {% assign role = member.role %}
+    {% if page.lang == "it" and member.role_it != blank %}{% assign role = member.role_it %}{% endif %}
+    {% assign bio = member.bio %}
+    {% if page.lang == "it" and member.bio_it != blank %}{% assign bio = member.bio_it %}{% endif %}
+    <article>{% if member.image %}<img class="person-photo" src="{{ member.image | relative_url }}" alt="{{ member.name }}" loading="lazy">{% else %}<div class="initials{% if member.color %} {{ member.color }}{% endif %}">{{ member.initials }}</div>{% endif %}<h3>{{ member.name }}</h3><p class="role">{{ role }}</p>{% if bio %}<p class="bio">{{ bio }}</p>{% endif %}{% if member.linkedin or member.github or member.orcid %}<div class="person-links">{% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank" rel="noopener">{% include icons/linkedin.svg %}LinkedIn</a>{% endif %}{% if member.github %}<a href="{{ member.github }}" target="_blank" rel="noopener">{% include icons/github.svg %}GitHub</a>{% endif %}{% if member.orcid %}<a href="{{ member.orcid }}" target="_blank" rel="noopener">{% include icons/orcid.svg %}ORCID</a>{% endif %}</div>{% endif %}</article>
     {% endfor %}
   </div>
 </section>

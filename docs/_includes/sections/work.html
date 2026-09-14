@@ -1,5 +1,5 @@
 {% assign work_text = site.sections | where: "lang", page.lang | where: "slug", "work" | first %}
-{% assign items = site.data[page.lang].work %}
+{% assign items = site.data.work %}
 <section class="work" id="work">
   <div class="section-heading light reveal">
     <div><p class="section-index">{{ work_text.index_label }}</p><h2>{{ work_text.title }}</h2></div>
@@ -7,7 +7,17 @@
   </div>
   <div class="work-grid">
     {% for item in items %}
-    <article class="work-card{% if item.wide == "true" %} wide{% endif %} reveal"><img{% if item.css_class %} class="{{ item.css_class }}"{% endif %} src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy"><div><span>{{ item.tag }}</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.url_text }}</a>{% endif %}</div></article>
+    {% assign alt = item.alt %}
+    {% if page.lang == "it" and item.alt_it != blank %}{% assign alt = item.alt_it %}{% endif %}
+    {% assign tag = item.tag %}
+    {% if page.lang == "it" and item.tag_it != blank %}{% assign tag = item.tag_it %}{% endif %}
+    {% assign title = item.title %}
+    {% if page.lang == "it" and item.title_it != blank %}{% assign title = item.title_it %}{% endif %}
+    {% assign description = item.description %}
+    {% if page.lang == "it" and item.description_it != blank %}{% assign description = item.description_it %}{% endif %}
+    {% assign url_text = item.url_text %}
+    {% if page.lang == "it" and item.url_text_it != blank %}{% assign url_text = item.url_text_it %}{% endif %}
+    <article class="work-card{% if item.wide == "true" %} wide{% endif %} reveal"><img{% if item.css_class %} class="{{ item.css_class }}"{% endif %} src="{{ item.image | relative_url }}" alt="{{ alt }}" loading="lazy"><div><span>{{ tag }}</span><h3>{{ title }}</h3><p>{{ description }}</p>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ url_text }}</a>{% endif %}</div></article>
     {% endfor %}
   </div>
   <a class="github-link" href="{{ work_text.github_href }}" target="_blank" rel="noopener">{{ work_text.github_text }} <span>↗</span></a>

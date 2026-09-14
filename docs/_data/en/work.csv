@@ -1,5 +1,0 @@
-image,alt,tag,title,description,url,url_text,wide,css_class
-/assets/img/bologna-heat.webp,Land surface temperature map of Bologna,Climate intelligence,Land surface temperature in Bologna,Identifying heat patterns to support urban climate adaptation.,,,true,
-/assets/img/bike-stress.webp,Cycling stress map of Italy,Active mobility,Stress in bici,Reading the road network through cyclists’ perceived stress.,https://stressinbici.it/,Open the map ↗,false,
-/assets/img/time-travel.webp,Historical migration map of Trentino,Digital humanities,Trento Time Travel Maps,Exploring Trentino emigration through historical data and maps.,,,false,
-/assets/img/ai-ethics-canvas.webp,Overview of the AI Ethics Canvas,Responsible AI · Public administration,AI Ethics Canvas,"A structured canvas for planning, designing and deploying ethical AI solutions in public administrations.",https://github.com/dclfbk/canvasaiethics,Explore the canvas ↗,false,canvas-image

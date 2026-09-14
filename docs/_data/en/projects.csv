@@ -1,6 +1,0 @@
-order,tag,title,description,url,partner_text,partner_url,funder,start_date,end_date,keywords,our_role
-01,Horizon Europe · Knowledge valorisation,ARCADIA,"An open, AI-supported toolbox helping researchers and knowledge-transfer professionals move research results towards real-world use.",https://arcadia-project.eu/,,,Horizon2020,2025,2029,knowledge transfer,
-02,Climate · Digital twins,TALEA,"Environmental data and simulation for urban green spaces, climate resilience and citizen engagement in Bologna.",,,,,,,,
-03,Health data · Data governance,Trentino Health Factory,"We work on data governance for an infrastructure that brings together clinical, health and environmental data for research and personalised medicine.",https://www.asuit.tn.it/progetti-ricerca/trentino-health-factory,,,ASUIT,,,,
-04,Education · AI governance,AI Literacy Lab,"Practical learning programmes that help citizens and public servants understand how AI works, where it fails and how to use it responsibly.",,In collaboration with the Autonomous Province of Trento ↗,https://www.provincia.tn.it/Amministrazione/Strutture-organizzative/Umse-per-l-intelligenza-artificiale,,,,,
-05,WebGIS · Social infrastructure,Povo Civic Hub,"An interactive territorial atlas for exploring co-presence, local vitality and social infrastructure across Povo, Trento.",https://github.com/dclfbk/povocivichub,,,,,,,

@@ -1,8 +1,8 @@
 {% assign projects_text = site.sections | where: "lang", page.lang | where: "slug", "projects" | first %}
 {% assign archive_text = site.sections | where: "lang", page.lang | where: "slug", "project_archive" | first %}
 {% assign ui = site.data[page.lang].ui %}
-{% assign projects = site.data[page.lang].projects %}
-{% assign archive = site.data[page.lang].archive %}
+{% assign projects = site.data.projects %}
+{% assign archive = site.data.archive %}
 <section class="projects" id="projects">
   <div class="section-heading reveal">
     <div><p class="section-index">{{ projects_text.index_label }}</p><h2>{{ projects_text.title }}</h2></div>
@@ -10,16 +10,26 @@
   </div>
   <div class="project-list">
     {% for project in projects %}
+    {% assign tag = project.tag %}
+    {% if page.lang == "it" and project.tag_it != blank %}{% assign tag = project.tag_it %}{% endif %}
+    {% assign description = project.description %}
+    {% if page.lang == "it" and project.description_it != blank %}{% assign description = project.description_it %}{% endif %}
+    {% assign partner_text = project.partner_text %}
+    {% if page.lang == "it" and project.partner_text_it != blank %}{% assign partner_text = project.partner_text_it %}{% endif %}
+    {% assign keywords_raw = project.keywords %}
+    {% if page.lang == "it" and project.keywords_it != blank %}{% assign keywords_raw = project.keywords_it %}{% endif %}
+    {% assign our_role = project.our_role %}
+    {% if page.lang == "it" and project.our_role_it != blank %}{% assign our_role = project.our_role_it %}{% endif %}
     {% capture project_body %}
-    <p class="tag">{{ project.tag }}</p>
+    <p class="tag">{{ tag }}</p>
     <h3>{{ project.title }}{% if project.url %} <small>↗</small>{% endif %}</h3>
     {% if project.funder or project.start_date %}
     <p class="project-meta">{% if project.funder %}<span class="project-funder">{{ ui.project_funder_label }} {{ project.funder }}</span>{% endif %}{% if project.start_date %}<span class="project-dates">{{ project.start_date }}{% if project.end_date %}–{{ project.end_date }}{% else %}–{{ ui.project_ongoing_label }}{% endif %}</span>{% endif %}</p>
     {% endif %}
-    <p>{{ project.description }}</p>
-    {% if project.our_role %}<p class="project-role">{{ ui.project_role_label }} {{ project.our_role }}</p>{% endif %}
-    {% if project.keywords %}<div class="project-keywords">{% assign keywords = project.keywords | split: "," %}{% for keyword in keywords %}<span>{{ keyword | strip }}</span>{% endfor %}</div>{% endif %}
-    {% if project.partner_text %}<a class="project-partner" href="{{ project.partner_url }}" target="_blank" rel="noopener">{{ project.partner_text }}</a>{% endif %}
+    <p>{{ description }}</p>
+    {% if our_role %}<p class="project-role">{{ ui.project_role_label }} {{ our_role }}</p>{% endif %}
+    {% if keywords_raw %}<div class="project-keywords">{% assign keywords = keywords_raw | split: "," %}{% for keyword in keywords %}<span>{{ keyword | strip }}</span>{% endfor %}</div>{% endif %}
+    {% if partner_text %}<a class="project-partner" href="{{ project.partner_url }}" target="_blank" rel="noopener">{{ partner_text }}</a>{% endif %}
     {% endcapture %}
     {% if project.url %}
     <a class="project reveal" href="{{ project.url }}" target="_blank" rel="noopener"><span class="project-no">{{ project.order }}</span><div>{{ project_body }}</div></a>
@@ -33,7 +43,11 @@
     <div class="archive-carousel">
     <div class="archive-grid" data-carousel="">
       {% for item in archive %}
-      <article><span>{{ item.tag }}</span><h4>{{ item.title }}</h4><p>{{ item.description }}</p></article>
+      {% assign tag = item.tag %}
+      {% if page.lang == "it" and item.tag_it != blank %}{% assign tag = item.tag_it %}{% endif %}
+      {% assign description = item.description %}
+      {% if page.lang == "it" and item.description_it != blank %}{% assign description = item.description_it %}{% endif %}
+      <article><span>{{ tag }}</span><h4>{{ item.title }}</h4><p>{{ description }}</p></article>
       {% endfor %}
     </div>
     <div class="carousel-controls"><button type="button" data-carousel-prev="" aria-label="{{ ui.archive_carousel_prev_aria_label }}" disabled="disabled">←</button><button type="button" data-carousel-next="" aria-label="{{ ui.archive_carousel_next_aria_label }}">→</button></div>

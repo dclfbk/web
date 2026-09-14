@@ -1,6 +1,6 @@
 {% assign hero = site.sections | where: "lang", page.lang | where: "slug", "hero" | first %}
-{% assign maps = site.data[page.lang].hero_maps %}
-{% assign topics = site.data[page.lang].hero_topics %}
+{% assign maps = site.data.hero_maps %}
+{% assign topics = site.data.hero_topics %}
 <section class="hero">
   <div class="hero-copy reveal visible">
     <p class="eyebrow">{{ hero.eyebrow }}</p>
@@ -11,12 +11,19 @@
       <a class="button text" href="{{ hero.cta_secondary_href }}">{{ hero.cta_secondary_text }} <span>↓</span></a>
     </div>
     <div class="hero-topics" aria-label="Research areas">
-      {% for topic in topics %}<span>{{ topic.topic }}</span>{% endfor %}
+      {% for topic in topics %}
+      {% assign topic_label = topic.topic %}
+      {% if page.lang == "it" and topic.topic_it != blank %}{% assign topic_label = topic.topic_it %}{% endif %}
+      <span>{{ topic_label }}</span>{% endfor %}
     </div>
   </div>
   <div class="hero-visual reveal visible">
     {% for map in maps %}
-    <a class="hero-map" href="{{ map.url }}" target="_blank" rel="noopener"><img{% if map.css_class %} class="{{ map.css_class }}"{% endif %} src="{{ map.image | relative_url }}" alt="{{ map.alt }}"><span class="hero-map-caption">{{ map.caption }}</span></a>
+    {% assign alt = map.alt %}
+    {% if page.lang == "it" and map.alt_it != blank %}{% assign alt = map.alt_it %}{% endif %}
+    {% assign caption = map.caption %}
+    {% if page.lang == "it" and map.caption_it != blank %}{% assign caption = map.caption_it %}{% endif %}
+    <a class="hero-map" href="{{ map.url }}" target="_blank" rel="noopener"><img{% if map.css_class %} class="{{ map.css_class }}"{% endif %} src="{{ map.image | relative_url }}" alt="{{ alt }}"><span class="hero-map-caption">{{ caption }}</span></a>
     {% endfor %}
   </div>
 </section>

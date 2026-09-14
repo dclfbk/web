@@ -1,5 +1,5 @@
 {% assign ui = site.data[page.lang].ui %}
-{% assign nav = site.data[page.lang].nav %}
+{% assign nav = site.data.nav %}
 <header class="site-header">
   <div class="identity">
     <a class="fbk-brand" href="https://www.fbk.eu/" target="_blank" rel="noopener" aria-label="{{ ui.fbk_aria_label }}"><img src="{{ '/assets/img/fbk-logo-header.png' | relative_url }}" alt="Fondazione Bruno Kessler"></a>
@@ -9,7 +9,9 @@
   <button class="menu-button" aria-expanded="false" aria-controls="nav">{{ ui.menu_button }}</button>
   <nav id="nav" aria-label="{{ ui.nav_aria_label }}">
     {% for item in nav %}
-    <a{% if item.cta == "cta" %} class="nav-cta"{% endif %} href="{{ item.href }}">{{ item.label }}</a>
+    {% assign label = item.label %}
+    {% if page.lang == "it" and item.label_it != blank %}{% assign label = item.label_it %}{% endif %}
+    <a{% if item.cta == "cta" %} class="nav-cta"{% endif %} href="{{ item.href }}">{{ label }}</a>
     {% endfor %}
     <span class="lang-switch">
       <a href="{{ '/' | relative_url }}"{% if page.lang == "en" %} class="current"{% endif %}>EN</a>

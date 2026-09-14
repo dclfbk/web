@@ -1,6 +1,6 @@
 {% assign approach = site.sections | where: "lang", page.lang | where: "slug", "approach" | first %}
 {% assign funding = site.sections | where: "lang", page.lang | where: "slug", "funding_call" | first %}
-{% assign pillars = site.data[page.lang].pillars %}
+{% assign pillars = site.data.pillars %}
 <section class="manifesto" id="approach">
   <p class="section-index">{{ approach.index_label }}</p>
   <div class="manifesto-intro reveal">
@@ -9,7 +9,11 @@
   </div>
   <div class="pillars">
     {% for pillar in pillars %}
-    <article class="pillar reveal"><span>{{ pillar.number }}</span><h3>{{ pillar.title }}</h3><p>{{ pillar.description }}</p></article>
+    {% assign title = pillar.title %}
+    {% if page.lang == "it" and pillar.title_it != blank %}{% assign title = pillar.title_it %}{% endif %}
+    {% assign description = pillar.description %}
+    {% if page.lang == "it" and pillar.description_it != blank %}{% assign description = pillar.description_it %}{% endif %}
+    <article class="pillar reveal"><span>{{ pillar.number }}</span><h3>{{ title }}</h3><p>{{ description }}</p></article>
     {% endfor %}
   </div>
   <div class="funding-call reveal">

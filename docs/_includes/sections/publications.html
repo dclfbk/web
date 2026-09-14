@@ -1,6 +1,6 @@
 {% assign pub_text = site.sections | where: "lang", page.lang | where: "slug", "publications" | first %}
 {% assign ui = site.data[page.lang].ui %}
-{% assign items = site.data[page.lang].publications %}
+{% assign items = site.data.publications %}
 <section class="publications" id="publications">
   <div class="section-heading reveal">
     <div><p class="section-index">{{ pub_text.index_label }}</p><h2>{{ pub_text.title }}</h2></div>
