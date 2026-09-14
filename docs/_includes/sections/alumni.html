@@ -1,0 +1,34 @@
+{% assign alumni_text = site.sections | where: "lang", page.lang | where: "slug", "alumni" | first %}
+{% assign internship = site.sections | where: "lang", page.lang | where: "slug", "internship" | first %}
+{% assign ui = site.data[page.lang].ui %}
+{% assign all_alumni = site.data[page.lang].alumni %}
+{% assign collaborators = all_alumni | where: "group", "collaborators" %}
+{% assign students = all_alumni | where: "group", "students" %}
+<section class="alumni" id="alumni">
+  <div class="alumni-heading reveal"><p class="section-index">{{ alumni_text.index_label }}</p><h2>{{ alumni_text.title }}</h2>{{ alumni_text.content }}</div>
+
+  <div class="internship-call reveal">
+    <div><p class="eyebrow">{{ internship.eyebrow }}</p><h3>{{ internship.title }}</h3></div>
+    <div>{{ internship.content }}</div>
+  </div>
+
+  <p class="alumni-group-label student-label">{{ alumni_text.group2_label }}</p>
+  <div class="alumni-carousel">
+  <div class="alumni-list student-list" data-carousel="">
+    {% for person in students %}
+    <article>{% if person.image %}<img class="alumni-photo" src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">{% else %}<div class="alumni-initials">{{ person.initials }}</div>{% endif %}<h3>{{ person.name }}</h3><p>{{ person.role }}</p>{% if person.linkedin or person.orcid or person.link_url %}<div class="person-links">{% if person.linkedin %}<a href="{{ person.linkedin }}" target="_blank" rel="noopener">{% include icons/linkedin.svg %}LinkedIn</a>{% endif %}{% if person.orcid %}<a href="{{ person.orcid }}" target="_blank" rel="noopener">{% include icons/orcid.svg %}ORCID</a>{% endif %}{% if person.link_url %}<a href="{{ person.link_url }}" target="_blank" rel="noopener">{{ person.link_text }}</a>{% endif %}</div>{% endif %}</article>
+    {% endfor %}
+  </div>
+  <div class="carousel-controls"><button type="button" data-carousel-prev="" aria-label="{{ ui.students_carousel_prev_aria_label }}" disabled="disabled">←</button><button type="button" data-carousel-next="" aria-label="{{ ui.students_carousel_next_aria_label }}">→</button></div>
+  </div>
+
+  <p class="alumni-group-label">{{ alumni_text.group1_label }}</p>
+  <div class="alumni-carousel">
+  <div class="alumni-list" data-carousel="">
+    {% for person in collaborators %}
+    <article>{% if person.image %}<img class="alumni-photo" src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">{% else %}<div class="alumni-initials">{{ person.initials }}</div>{% endif %}<h3>{{ person.name }}</h3><p>{{ person.role }}</p>{% if person.linkedin or person.orcid or person.link_url %}<div class="person-links">{% if person.linkedin %}<a href="{{ person.linkedin }}" target="_blank" rel="noopener">{% include icons/linkedin.svg %}LinkedIn</a>{% endif %}{% if person.orcid %}<a href="{{ person.orcid }}" target="_blank" rel="noopener">{% include icons/orcid.svg %}ORCID</a>{% endif %}{% if person.link_url %}<a href="{{ person.link_url }}" target="_blank" rel="noopener">{{ person.link_text }}</a>{% endif %}</div>{% endif %}</article>
+    {% endfor %}
+  </div>
+  <div class="carousel-controls"><button type="button" data-carousel-prev="" aria-label="{{ ui.alumni_carousel_prev_aria_label }}" disabled="disabled">←</button><button type="button" data-carousel-next="" aria-label="{{ ui.alumni_carousel_next_aria_label }}">→</button></div>
+  </div>
+</section>

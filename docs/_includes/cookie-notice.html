@@ -1,0 +1,7 @@
+{% assign ui = site.data[page.lang].ui %}
+<div id="cookie-notice" class="cookie-notice" role="dialog" aria-label="Cookie notice" hidden>
+  <p>{{ ui.cookie_notice_text }}</p>
+  <div class="cookie-notice-actions">
+    <button type="button" data-cookie-accept="">{{ ui.cookie_notice_accept }}</button>
+  </div>
+</div>

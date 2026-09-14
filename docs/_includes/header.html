@@ -1,0 +1,19 @@
+{% assign ui = site.data[page.lang].ui %}
+{% assign nav = site.data[page.lang].nav %}
+<header class="site-header">
+  <div class="identity">
+    <a class="fbk-brand" href="https://www.fbk.eu/" target="_blank" rel="noopener" aria-label="{{ ui.fbk_aria_label }}"><img src="{{ '/assets/img/fbk-logo-header.png' | relative_url }}" alt="Fondazione Bruno Kessler"></a>
+    <span class="identity-divider" aria-hidden="true"></span>
+    <a class="brand" href="{% if page.lang == 'it' %}{{ '/it/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}#top" aria-label="{{ ui.home_aria_label }}"><span>{{ ui.brand_name }}<br><small>{{ ui.brand_tagline }}</small></span></a>
+  </div>
+  <button class="menu-button" aria-expanded="false" aria-controls="nav">{{ ui.menu_button }}</button>
+  <nav id="nav" aria-label="{{ ui.nav_aria_label }}">
+    {% for item in nav %}
+    <a{% if item.cta == "cta" %} class="nav-cta"{% endif %} href="{{ item.href }}">{{ item.label }}</a>
+    {% endfor %}
+    <span class="lang-switch">
+      <a href="{{ '/' | relative_url }}"{% if page.lang == "en" %} class="current"{% endif %}>EN</a>
+      <a href="{{ '/it/' | relative_url }}"{% if page.lang == "it" %} class="current"{% endif %}>IT</a>
+    </span>
+  </nav>
+</header>

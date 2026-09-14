@@ -1,7 +1,36 @@
 title: Digital Commons Lab
 description: Digital Commons Lab is a research unit of FBK's Digital Society Center.
-lang: en
+url: "https://dcl.fbk.eu"
 markdown: kramdown
+kramdown:
+  input: GFM
+
+collections:
+  sections:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: sections
+    values:
+      layout: none
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+  - scope:
+      path: "it"
+    values:
+      lang: it
+
+languages: ["en", "it"]
+
 exclude:
-  - Readme.txt
+  - Gemfile
+  - Gemfile.lock
   - README.md
+  - Readme.txt
+  - vendor
+  - node_modules

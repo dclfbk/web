@@ -1,0 +1,23 @@
+{% assign pub_text = site.sections | where: "lang", page.lang | where: "slug", "publications" | first %}
+{% assign ui = site.data[page.lang].ui %}
+{% assign items = site.data[page.lang].publications %}
+<section class="publications" id="publications">
+  <div class="section-heading reveal">
+    <div><p class="section-index">{{ pub_text.index_label }}</p><h2>{{ pub_text.title }}</h2></div>
+    <div class="publications-tools">
+      {{ pub_text.content }}
+      <label class="publication-search">
+        <span class="visually-hidden">{{ ui.publication_search_aria_label }}</span>
+        <input type="search" id="publication-search" placeholder="{{ ui.publication_search_placeholder }}" aria-label="{{ ui.publication_search_aria_label }}">
+      </label>
+    </div>
+  </div>
+  <div class="publication-scroll">
+    <div class="publication-list" id="publication-list">
+      {% for item in items %}
+      <a class="publication reveal" href="{{ item.url }}" target="_blank" rel="noopener" data-date="{{ item.date_sort }}"><span>{{ item.date_label }}</span><h3>{{ item.title }}</h3><b>{{ item.cta_text }}</b></a>
+      {% endfor %}
+    </div>
+    <button type="button" class="publication-scroll-down" id="publication-scroll-down" aria-label="{{ ui.publication_scroll_down_aria_label }}">↓</button>
+  </div>
+</section>

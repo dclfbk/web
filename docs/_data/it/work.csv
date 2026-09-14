@@ -1,0 +1,5 @@
+image,alt,tag,title,description,url,url_text,wide,css_class
+/assets/img/bologna-heat.webp,Mappa della temperatura superficiale di Bologna,Intelligenza climatica,Temperatura superficiale a Bologna,Identificare i pattern di calore per supportare l'adattamento climatico urbano.,,,true,
+/assets/img/bike-stress.webp,Mappa dello stress ciclabile in Italia,Mobilità attiva,Stress in bici,Leggere la rete stradale attraverso lo stress percepito dai ciclisti.,https://stressinbici.it/,Apri la mappa ↗,false,
+/assets/img/time-travel.webp,Mappa storica della migrazione trentina,Digital humanities,Trento Time Travel Maps,Esplorare l'emigrazione trentina attraverso dati e mappe storiche.,,,false,
+/assets/img/ai-ethics-canvas.webp,Panoramica dell'AI Ethics Canvas,IA responsabile · Pubblica amministrazione,AI Ethics Canvas,"Un canvas strutturato per pianificare, progettare e implementare soluzioni di IA etica nelle pubbliche amministrazioni.",https://github.com/dclfbk/canvasaiethics,Esplora il canvas ↗,false,canvas-image

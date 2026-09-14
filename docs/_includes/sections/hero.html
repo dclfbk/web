@@ -1,0 +1,22 @@
+{% assign hero = site.sections | where: "lang", page.lang | where: "slug", "hero" | first %}
+{% assign maps = site.data[page.lang].hero_maps %}
+{% assign topics = site.data[page.lang].hero_topics %}
+<section class="hero">
+  <div class="hero-copy reveal visible">
+    <p class="eyebrow">{{ hero.eyebrow }}</p>
+    <h1>{{ hero.title }}</h1>
+    {{ hero.content | replace: '<p>', '<p class="lede">' }}
+    <div class="hero-actions">
+      <a class="button primary" href="{{ hero.cta_primary_href }}">{{ hero.cta_primary_text }} <span>↘</span></a>
+      <a class="button text" href="{{ hero.cta_secondary_href }}">{{ hero.cta_secondary_text }} <span>↓</span></a>
+    </div>
+    <div class="hero-topics" aria-label="Research areas">
+      {% for topic in topics %}<span>{{ topic.topic }}</span>{% endfor %}
+    </div>
+  </div>
+  <div class="hero-visual reveal visible">
+    {% for map in maps %}
+    <a class="hero-map" href="{{ map.url }}" target="_blank" rel="noopener"><img{% if map.css_class %} class="{{ map.css_class }}"{% endif %} src="{{ map.image | relative_url }}" alt="{{ map.alt }}"><span class="hero-map-caption">{{ map.caption }}</span></a>
+    {% endfor %}
+  </div>
+</section>

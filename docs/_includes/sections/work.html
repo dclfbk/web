@@ -1,0 +1,14 @@
+{% assign work_text = site.sections | where: "lang", page.lang | where: "slug", "work" | first %}
+{% assign items = site.data[page.lang].work %}
+<section class="work" id="work">
+  <div class="section-heading light reveal">
+    <div><p class="section-index">{{ work_text.index_label }}</p><h2>{{ work_text.title }}</h2></div>
+    {{ work_text.content }}
+  </div>
+  <div class="work-grid">
+    {% for item in items %}
+    <article class="work-card{% if item.wide == "true" %} wide{% endif %} reveal"><img{% if item.css_class %} class="{{ item.css_class }}"{% endif %} src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy"><div><span>{{ item.tag }}</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.url_text }}</a>{% endif %}</div></article>
+    {% endfor %}
+  </div>
+  <a class="github-link" href="{{ work_text.github_href }}" target="_blank" rel="noopener">{{ work_text.github_text }} <span>↗</span></a>
+</section>

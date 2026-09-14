@@ -1,0 +1,10 @@
+{% assign contact = site.sections | where: "lang", page.lang | where: "slug", "contact" | first %}
+<section class="contact" id="contact">
+  <div class="contact-copy reveal"><p class="section-index">{{ contact.index_label }}</p><h2>{{ contact.title }}</h2></div>
+  <div class="contact-details reveal">
+    {{ contact.content }}
+    <a class="contact-email" id="contact-email" href="#" rel="nofollow" data-u="{{ contact.email_user }}" data-d="{{ contact.email_domain }}">{{ contact.email_link_text }}</a>
+    <a href="https://www.fbk.eu/" target="_blank" rel="noopener">{{ contact.fbk_text }}</a>
+    <a href="https://github.com/dclfbk" target="_blank" rel="noopener">{{ contact.github_text }}</a>
+  </div>
+</section>

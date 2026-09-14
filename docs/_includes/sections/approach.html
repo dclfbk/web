@@ -1,0 +1,19 @@
+{% assign approach = site.sections | where: "lang", page.lang | where: "slug", "approach" | first %}
+{% assign funding = site.sections | where: "lang", page.lang | where: "slug", "funding_call" | first %}
+{% assign pillars = site.data[page.lang].pillars %}
+<section class="manifesto" id="approach">
+  <p class="section-index">{{ approach.index_label }}</p>
+  <div class="manifesto-intro reveal">
+    <h2>{{ approach.title }}</h2>
+    {{ approach.content }}
+  </div>
+  <div class="pillars">
+    {% for pillar in pillars %}
+    <article class="pillar reveal"><span>{{ pillar.number }}</span><h3>{{ pillar.title }}</h3><p>{{ pillar.description }}</p></article>
+    {% endfor %}
+  </div>
+  <div class="funding-call reveal">
+    <div><p class="eyebrow">{{ funding.eyebrow }}</p><h3>{{ funding.title }}</h3></div>
+    <div>{{ funding.content }}<a href="{{ funding.cta_href }}">{{ funding.cta_text }} <span>↘</span></a></div>
+  </div>
+</section>
