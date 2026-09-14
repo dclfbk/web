@@ -77,3 +77,12 @@ if(pubSearch&&pubList){
     if(pubScrollDown){pubList.scrollTop=0;pubScrollDown.disabled=pubList.scrollHeight<=pubList.clientHeight}
   });
 }
+
+const emailLink=document.querySelector('#contact-email');
+if(emailLink){
+  const reverse=s=>s.split('').reverse().join('');
+  const address=`${reverse(emailLink.dataset.u)}@${reverse(emailLink.dataset.d)}`;
+  emailLink.href=`mailto:${address}`;
+  emailLink.textContent=`${address} ↗`;
+  emailLink.removeAttribute('rel');
+}
