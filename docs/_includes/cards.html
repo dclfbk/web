@@ -1,0 +1,11 @@
+<div class="grid">
+{% for item in include.items %}
+<article class="item">
+  {% if item.image %}<img src="{{ item.image | relative_url }}" alt="{{ item.title | default: item.name }}">{% endif %}
+  {% if item.category %}<p class="eyebrow">{{ item.category }}</p>{% endif %}
+  <h3>{% if item.url %}<a href="{{ item.url }}">{{ item.title | default: item.name }}</a>{% else %}{{ item.title | default: item.name }}{% endif %}</h3>
+  {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+  {% if item.year %}<small>{{ item.year }}</small>{% endif %}
+</article>
+{% endfor %}
+</div>
