@@ -2,14 +2,6 @@ title: Digital Commons Lab
 description: Digital Commons Lab is a research unit of FBK's Digital Society Center.
 lang: en
 markdown: kramdown
-collections:
-  content:
-    output: false
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
 exclude:
   - Readme.txt
   - README.md
