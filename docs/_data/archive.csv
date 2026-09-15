@@ -1,10 +1,9 @@
-tag,tag_it,title,description,description_it
-Responsible AI,IA responsabile,AIxPA,Ethical and transparent AI frameworks for public administration.,Framework di IA etica e trasparente per la pubblica amministrazione.
-Computer vision · Mapping,Computer vision · Mappatura,Street Light Scanner,Street-level imagery and AI for open urban-infrastructure data.,Immagini a livello stradale e IA per dati aperti sulle infrastrutture urbane.
-Rural communities,Comunità rurali,Logistica di Comunità,Local knowledge and technology for sustainable rural logistics.,Conoscenza locale e tecnologia per una logistica rurale sostenibile.
-Waste · Civic technology,Rifiuti · Tecnologia civica,SmartBin,Open data and digital tools for smarter waste collection.,Dati aperti e strumenti digitali per una raccolta rifiuti più intelligente.
-Open data · Public health,Open data · Salute pubblica,COVID-19 Trentino,Open visualisations of the pandemic in Trentino.,Visualizzazioni open data della pandemia in Trentino.
-Digital humanities · Maps,Digital humanities · Mappe,Trento Time Travel Maps,A historical exploration of Trentino emigration.,Un'esplorazione storica dell'emigrazione trentina.
-Accessibility · OpenStreetMap,Accessibilità · OpenStreetMap,Sidewalk Widths Italy,Mapping the width and accessibility of Italian pavements.,Mappatura della larghezza e accessibilità dei marciapiedi italiani.
-Urban data · Mobility,Dati urbani · Mobilità,Parklog Trento,Car and bicycle parking availability in Trento.,Disponibilità di parcheggi auto e bici a Trento.
-Urban environment,Ambiente urbano,Trento Trees Eco-benefit,Making the value of individual urban trees visible.,Rendere visibile il valore dei singoli alberi urbani.
+tag,tag_it,title,description,description_it,link
+Responsible AI,IA responsabile,AIxPA,Ethical and transparent AI frameworks for public administration.,Framework di IA etica e trasparente per la pubblica amministrazione.,
+Computer vision · Mapping,Computer vision · Mappatura,Street Light Scanner,Street-level imagery and AI for open urban-infrastructure data.,Immagini a livello stradale e IA per dati aperti sulle infrastrutture urbane.,
+Rural communities,Comunità rurali,Logistica di Comunità,Local knowledge and technology for sustainable rural logistics.,Conoscenza locale e tecnologia per una logistica rurale sostenibile.,
+Waste · Civic technology,Rifiuti · Tecnologia civica,SmartBin,Open data and digital tools for smarter waste collection.,Dati aperti e strumenti digitali per una raccolta rifiuti più intelligente.,
+Open data · Public health,Open data · Salute pubblica,COVID-19 Trentino,Open visualisations of the pandemic in Trentino.,Visualizzazioni open data della pandemia in Trentino.,
+Digital humanities · Maps,Digital humanities · Mappe,Trento Time Travel Maps,A historical exploration of Trentino emigration.,Un'esplorazione storica dell'emigrazione trentina.,
+Sofial Infrastrucutre,Infrastrutture sociali,Povo Civic Hub,"An interactive territorial atlas for exploring co-presence, local vitality and social infrastructure across Povo, Trento.","Un atlante territoriale interattivo per esplorare co-presenza, vitalità locale e infrastrutture sociali a Povo, Trento.",https://github.com/dclfbk/povocivichub
+Open Data,Open Data,Dati Trentino ,The open data portal of the autonomous province of Trento,Il portale degli open data della provincia autonoma di Trento,
