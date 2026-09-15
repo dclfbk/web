@@ -1,9 +1,21 @@
 title: Digital Commons Lab
-description: Digital Commons Lab is a research unit of FBK's Digital Society Center.
+tagline: Open data, responsible AI & civic technology
+description: Digital Commons Lab is a research unit of FBK's Digital Society Center. Open data, responsible AI, digital governance and civic technology.
 url: "https://dcl.fbk.eu"
+logo: /assets/img/social-preview.png
+lang: en
+locale: en_US
+social:
+  name: Digital Commons Lab
+  links:
+    - https://github.com/dclfbk
 markdown: kramdown
 kramdown:
   input: GFM
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   sections:

@@ -5,8 +5,8 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.data[page.lang].ui.meta_description }}">
-  <title>{{ site.data[page.lang].ui.meta_title }}</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0068b4">
   <link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -14,10 +14,42 @@
   <link href="{{ '/assets/css/fonts.css' | relative_url }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   {% if page.lang == "en" %}
-  <link rel="alternate" hreflang="it" href="{{ '/it/' | absolute_url }}">
-  {% else %}
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
   <link rel="alternate" hreflang="en" href="{{ '/' | absolute_url }}">
+  <link rel="alternate" hreflang="it" href="{{ '/it/' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+  {% else %}
+  <link rel="canonical" href="{{ '/it/' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/' | absolute_url }}">
+  <link rel="alternate" hreflang="it" href="{{ '/it/' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
   {% endif %}
+  {% seo %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchOrganization",
+    "name": "Digital Commons Lab",
+    "url": "{{ site.url }}/",
+    "logo": "{{ '/assets/img/social-preview.png' | absolute_url }}",
+    "description": "{{ site.data[page.lang].ui.meta_description }}",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Fondazione Bruno Kessler",
+      "url": "https://www.fbk.eu/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Sommarive 18",
+      "postalCode": "38123",
+      "addressLocality": "Trento",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://github.com/dclfbk"
+    ]
+  }
+  </script>
 </head>
 <body>
   {% include header.html %}
